@@ -1,5 +1,7 @@
 import Link from "next/link";
 
+//product card
+
 export default function ProductCard({ product }) {
   return (
     <article className="border border-gray-200 p-4">

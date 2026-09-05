@@ -2,6 +2,8 @@
 
 import { useCartStore } from "@/store/cartStore";
 
+//viser cart
+
 export default function CartPage() {
   const items = useCartStore((state) => state.items);
 

@@ -1,4 +1,4 @@
-// what we do with the data/logic
+// hva vi gjør med data/logic
 
 import products from "@/data/products.json";
 

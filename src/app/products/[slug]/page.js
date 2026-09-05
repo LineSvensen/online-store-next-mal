@@ -2,6 +2,8 @@ import { getProductBySlug } from "@/lib/products";
 import { notFound } from "next/navigation";
 import AddToCartButton from "@/components/AddToCartButton.js";
 
+//single product page
+
 export default async function ProductPage({ params }) {
   const { slug } = await params;
   const product = getProductBySlug(slug);

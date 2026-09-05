@@ -1,5 +1,7 @@
 "use client";
 
+//add to cart button , frontend snakker med backend
+
 import { useCartStore } from "@/store/cartStore";
 
 export default function AddToCartButton({ product }) {
