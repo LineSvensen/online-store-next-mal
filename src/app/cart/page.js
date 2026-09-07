@@ -1,11 +1,16 @@
 "use client";
 
+import CartItem from "@/components/CartItem";
 import { useCartStore } from "@/store/cartStore";
 
 //viser cart
 
 export default function CartPage() {
   const items = useCartStore((state) => state.items);
+  const total = items.reduce(
+    (sum, item) => sum + item.price * item.quantity,
+    0,
+  );
 
   return (
     <main className="min-h-screen px-6 py-12">
@@ -17,23 +22,12 @@ export default function CartPage() {
         ) : (
           <div className="mt-8 space-y-6">
             {items.map((item) => (
-              <div
-                key={item.id}
-                className="flex items-center justify-between border-b border-gray-200 pb-4"
-              >
-                <div>
-                  <h2 className="font-semibold">{item.name}</h2>
-
-                  <p className="text-gray-600">{item.price} kr</p>
-
-                  <p className="text-sm text-gray-500">
-                    Quantity: {item.quantity}
-                  </p>
-                </div>
-
-                <p className="font-semibold">{item.price * item.quantity} kr</p>
-              </div>
+              <CartItem key={item.id} item={item} />
             ))}
+            <div className="mt-8 flex justify-between border-t border-gray-300 pt-4">
+              <p className="text-lg font-semibold">Total</p>
+              <p className="text-lg font-semibold">{total} kr</p>
+            </div>
           </div>
         )}
       </div>
