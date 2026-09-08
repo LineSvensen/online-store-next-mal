@@ -1,5 +1,27 @@
 import Stripe from "stripe";
 
+// gjør betalingsflyten robust !
+
+// Akkurat nå stoler vi på at kunden kommer tilbake til /success, 
+// men det er ikke nok i en ekte butikk.
+//  Kunden kan betale og så lukke fanen før redirect. 
+// Webhook betyr at Stripe sender beskjed direkte til backend når 
+// betalingen faktisk er fullført.
+
+
+// Kunde betaler i Stripe
+//         ↓
+// Stripe bekrefter betalingen
+//         ↓
+// Stripe sender event til /api/webhook
+//         ↓
+// Backend vet sikkert at betaling = fullført
+//         ↓
+// senere kan vi:
+// - opprette ordre
+// - trekke lagerbeholdning
+// - sende e-post
+
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
 export async function POST(request) {

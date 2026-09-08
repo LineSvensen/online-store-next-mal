@@ -1,5 +1,19 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+
+Enkel Next.js nettbutikkmal med Stripe Checkout og Zustand handlekurv.
+
+• Produkter administreres direkte i JSON
+• Ingen database eller permanent lagring av ordre (men ordre blir lagret i Stripe)
+• Ingen kundekontoer eller innlogging
+• Stripe Checkout + webhook
+• Bruk egne Stripe-nøkler via .env.local
+
+Required environment variables:
+STRIPE_SECRET_KEY=
+STRIPE_WEBHOOK_SECRET=
+
+
 ## Getting Started
 
 First, run the development server:
