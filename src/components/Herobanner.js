@@ -29,8 +29,8 @@ const slides = [
 
   {
     id: 3,
-    image: "/images/hero/hero-3.jpg",
-    foregroundImage: "/images/hero/hero-3-product.png",
+    image: "/images/Herobanner/blobs.jpg",
+    foregroundImage: "/images/Herobanner/nuts.jpg",
     eyebrow: "Our favourites",
     title: "Find your new favourite.",
     text: "A curated selection of products we love.",
@@ -105,7 +105,7 @@ export default function HeroBanner() {
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
     >
-      <div className="relative h-screen sm:h-[760px] md:h-[650px] lg:h-[720px] xl:h-[760px]">
+      <div className="relative h-screen sm:h-[650px]">
         {/* Background */}
         {slides.map((item, index) => (
           <div

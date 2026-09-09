@@ -5,7 +5,7 @@
     "slug": "product-one",
     "description": "A simple product description.",
     "price": 299,
-    "image": "/images/dummy.jpg"
+    "image": "/images/Herobanner/pills.jpg"
   },
   {
     "id": 2,
@@ -13,7 +13,7 @@
     "slug": "product-two",
     "description": "A simple product description.",
     "price": 499,
-    "image": "/images/dummy.jpg"
+    "image": "/images/Herobanner/shampoo.jpg"
   },
   {
     "id": 3,
@@ -21,6 +21,6 @@
     "slug": "product-three",
     "description": "A simple product description.",
     "price": 199,
-    "image": "/images/dummy.jpg"
+    "image": "/images/Herobanner/shirt.jpg"
   }
 ]

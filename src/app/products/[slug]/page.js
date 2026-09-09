@@ -1,6 +1,6 @@
 import { getProductBySlug } from "@/lib/products";
 import { notFound } from "next/navigation";
-import AddToCartButton from "@/components/AddToCartButton.js";
+
 
 //single product page
 
@@ -25,7 +25,7 @@ export default async function ProductPage({ params }) {
 
             <p className="mt-6 text-xl font-semibold">{product.price} kr</p>
 
-            <AddToCartButton product={product} />
+          
           </div>
         </div>
       </div>
