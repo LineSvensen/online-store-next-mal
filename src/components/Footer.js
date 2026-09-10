@@ -49,15 +49,15 @@ export default function Footer() {
                 Contact
               </Link>
 
-              <Link href="/shipping" className="hover:text-black">
+              <Link href="/policy" className="hover:text-black">
                 Shipping & returns
               </Link>
 
-              <Link href="/terms" className="hover:text-black">
+              <Link href="/policy" className="hover:text-black">
                 Terms & conditions
               </Link>
 
-              <Link href="/privacy" className="hover:text-black">
+              <Link href="/policy" className="hover:text-black">
                 Privacy policy
               </Link>
             </nav>

@@ -5,7 +5,7 @@ import AddToCartButton from "./AddToCartButton";
 
 export default function ProductCard({ product }) {
   return (
-    <article className="min-w-[300px] max-w-[330px] border border-gray-200 p-4">
+    <article className="min-w-[200px] md:min-w-[300px] max-w-[330px] border border-gray-200 p-4 ">
       <Link href={`/products/${product.slug}`} className="block">
         <div className="relative aspect-square overflow-hidden bg-gray-100">
           <Image
