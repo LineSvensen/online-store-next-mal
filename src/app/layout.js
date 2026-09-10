@@ -1,5 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
+
 import "./globals.css";
+
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -14,8 +16,59 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Online Store",
-  description: "A reusable online store built with Next.js",
+  metadataBase: new URL("https://example.com"),
+
+  title: {
+    default: "Online Store",
+    template: "%s | Online Store",
+  },
+
+  description: "A reusable online store built with Next.js.",
+
+  keywords: ["online store", "ecommerce", "shop", "products"],
+
+  authors: [
+    {
+      name: "Store Name",
+      url: "https://example.com",
+    },
+  ],
+
+  creator: "Store Name",
+  publisher: "Store Name",
+
+  robots: {
+    index: true,
+    follow: true,
+  },
+
+  openGraph: {
+    title: "Online Store",
+    description: "A reusable online store built with Next.js.",
+    url: "https://example.com",
+    siteName: "Online Store",
+    type: "website",
+    locale: "en_US",
+    images: [
+      {
+        url: "/images/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Online Store",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Online Store",
+    description: "A reusable online store built with Next.js.",
+    images: ["/images/og-image.jpg"],
+  },
+
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({ children }) {
@@ -28,6 +81,7 @@ export default function RootLayout({ children }) {
         <Header />
 
         {children}
+
         <Footer />
       </body>
     </html>

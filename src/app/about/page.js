@@ -1,6 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 
+export const metadata = {
+  title: "About",
+  description: "Learn more about our store and our story.",
+};
+
 export default function AboutPage() {
   return (
     <main>

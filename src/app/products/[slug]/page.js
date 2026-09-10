@@ -1,6 +1,15 @@
 import { getProductBySlug } from "@/lib/products";
 import { notFound } from "next/navigation";
 
+export async function generateMetadata({ params }) {
+  const { slug } = await params;
+  const product = getProductBySlug(slug);
+
+  return {
+    title: product?.name ?? "Product",
+    description: product?.description,
+  };
+}
 
 //single product page
 
@@ -24,8 +33,6 @@ export default async function ProductPage({ params }) {
             <p className="mt-4 text-gray-600">{product.description}</p>
 
             <p className="mt-6 text-xl font-semibold">{product.price} kr</p>
-
-          
           </div>
         </div>
       </div>

@@ -3,6 +3,14 @@
 import CartItem from "@/components/CartItem";
 import { useCartStore } from "@/store/cartStore";
 
+export const metadata = {
+  title: "Cart",
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
+
 //viser cart
 
 export default function CartPage() {

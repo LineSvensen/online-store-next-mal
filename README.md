@@ -6,10 +6,22 @@
 - Stripe Checkout + webhook
 - Bruk egne Stripe-nøkler via .env.local
 
+## Analytics & Cookie Consent
+
+This template is prepared for Google Analytics and cookie consent.
+
+Before enabling analytics:
+
+1. Create a Google Analytics property for the store.
+2. Add the GA Measurement ID to `.env.local`.
+3. Configure a consent management platform such as Silktide.
+4. Ensure analytics only runs after the user has given consent.
+
 ### Required environment variables:
 
 - STRIPE_SECRET_KEY=
 - STRIPE_WEBHOOK_SECRET=
+- NEXT_PUBLIC_GA_ID= (for google analytics)
 
 ##
 

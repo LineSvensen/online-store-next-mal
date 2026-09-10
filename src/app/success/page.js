@@ -3,6 +3,14 @@ import ClearCart from "@/components/ClearCart";
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
+export const metadata = {
+  title: "Order confirmed",
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
+
 export default async function SuccessPage({ searchParams }) {
   const { session_id } = await searchParams;
 

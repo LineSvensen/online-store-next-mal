@@ -1,3 +1,9 @@
+export const metadata = {
+  title: "Store Policy",
+  description:
+    "Read our terms for payment, shipping, returns and purchases.",
+};
+
 export default function StorePolicyPage() {
   return (
     <main className="mx-auto max-w-4xl px-6 py-20 md:px-10 lg:py-28">
