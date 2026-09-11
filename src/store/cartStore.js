@@ -2,11 +2,19 @@ import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
 // Handlekurv på tvers av sider
-
 export const useCartStore = create(
   persist(
     (set) => ({
       items: [],
+
+      // Forteller om Zustand har lest cart fra localStorage
+      _hasHydrated: false,
+
+      setHasHydrated: (state) => {
+        set({
+          _hasHydrated: state,
+        });
+      },
 
       // Legg produkt i handlekurven
       addItem: (product) =>
@@ -45,18 +53,28 @@ export const useCartStore = create(
       increaseQuantity: (id) =>
         set((state) => ({
           items: state.items.map((item) =>
-            item.id === id ? { ...item, quantity: item.quantity + 1 } : item,
+            item.id === id
+              ? {
+                  ...item,
+                  quantity: item.quantity + 1,
+                }
+              : item,
           ),
         })),
 
       // -1
       decreaseQuantity: (id) =>
         set((state) => ({
-          items: state.items.map((item) =>
-            item.id === id && item.quantity > 1
-              ? { ...item, quantity: item.quantity - 1 }
-              : item,
-          ),
+          items: state.items
+            .map((item) =>
+              item.id === id
+                ? {
+                    ...item,
+                    quantity: item.quantity - 1,
+                  }
+                : item,
+            )
+            .filter((item) => item.quantity > 0),
         })),
 
       // Fjern produktet helt
@@ -64,6 +82,8 @@ export const useCartStore = create(
         set((state) => ({
           items: state.items.filter((item) => item.id !== id),
         })),
+
+      // Tøm hele handlekurven
       clearCart: () =>
         set({
           items: [],
@@ -72,6 +92,11 @@ export const useCartStore = create(
 
     {
       name: "cart-storage",
+
+      // Kjøres når Zustand har lest ferdig localStorage
+      onRehydrateStorage: () => (state) => {
+        state?.setHasHydrated(true);
+      },
     },
   ),
 );
